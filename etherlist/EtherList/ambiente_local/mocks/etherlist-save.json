@@ -1,0 +1,42 @@
+{
+  "httpRequest": {
+    "path": "/etherlist/save",
+    "method": "POST",
+    "body": {
+      "id": "803088af-7be4-4ec1-bcdc-e3091b04823a",
+      "itensLista": [
+        {
+          "nome": "dfsdawrwersd",
+          "valor": 10.0
+        },
+        {
+          "nome": "testssdfe 282h",
+          "valor": 250.0
+        }
+      ]
+    }
+  },
+  "httpResponse": {
+    "statusCode": 201,
+    "body": {
+      "id": "803088af-7be4-4ec1-bcdc-e3091b04823a",
+      "etherListRequest": [
+        {
+          "id": "803088af-7be4-4ec1-bcdc-e3091b04823a",
+          "itensListaDTO": [
+            {
+              "nome": "dfsdawrwersd",
+              "valor": 10.0
+            },
+            {
+              "nome": "testssdfe 282h",
+              "valor": 250.0
+            }
+          ]
+        }
+      ],
+      "dataCriacao": "2024-03-09 22:50:30",
+      "dataExplosao": "2024-03-10 22:50:30"
+    }
+  }
+}

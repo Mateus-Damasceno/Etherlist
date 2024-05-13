@@ -1,0 +1,11 @@
+[
+  {
+      "httpRequest": {
+        "path": "/hello"
+      },
+      "httpResponse": {
+        "body": "Hello, world!",
+        "statusCode": 200
+      }
+  }
+]

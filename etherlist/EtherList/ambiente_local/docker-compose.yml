@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  mockserver:
+    image: mockserver/mockserver:mockserver-5.15.0
+    container_name: mockserver
+    hostname: mockserver
+    ports:
+      - "1080:1080"
+    environment:
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /mocks/*.json
+      MOCKSERVER_WATCH_INITIALIZATION_JSON: "true"
+    volumes:
+      - ./mocks:/mocks

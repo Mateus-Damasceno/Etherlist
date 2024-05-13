@@ -1,0 +1,13 @@
+{
+  "id" : "{% uuid 'v4' %}",
+  "itensLista" :[
+    {
+      "nome" : "dfsdawrwersd",
+      "valor" : 10.0
+    },
+    {
+      "nome" : "testssdfe 282h",
+      "valor" : 250.0
+    }
+  ]
+}

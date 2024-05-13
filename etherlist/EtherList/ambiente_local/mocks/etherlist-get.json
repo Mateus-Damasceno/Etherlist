@@ -1,0 +1,112 @@
+{
+  "httpRequest": {
+    "method": "GET",
+    "path": "/etherlist/all"
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": [
+        "application/json; charset=utf-8"
+      ]
+    },
+    "body":
+    [
+      {
+        "id": "586db65f-f764-43f9-998f-6cf2636cb7ee",
+        "etherListRequest": [
+          {
+            "id": "586db65f-f764-43f9-998f-6cf2636cb7ee",
+            "itensListaDTO": [
+              {
+                "nome": "ritalina",
+                "valor": 50.0,
+                "categoria" : "Amarelo"
+              },
+              {
+                "nome": "desvenlafaxina",
+                "valor": 100.0,
+                "categoria": "Verde"
+              },
+              {
+                "nome": "olmesartana",
+                "valor": 52.0,
+                "categoria": "Azul"
+              },
+              {
+                "nome": "duloxetina",
+                "valor": 100.0
+              }
+            ]
+          }
+        ],
+        "dataCriacao": "2024-03-12 22:03:58",
+        "dataExplosao": "2024-03-13 22:03:58"
+      },
+      {
+        "id": "7de29dee-e8e8-4d9b-8932-dbc917d2bacd",
+        "etherListRequest": [
+          {
+            "id": "7de29dee-e8e8-4d9b-8932-dbc917d2bacd",
+            "itensListaDTO": [
+              {
+                "nome": "chocolate",
+                "valor": 25.0
+              },
+              {
+                "nome": "bala",
+                "valor": 25.0
+              },
+              {
+                "nome": "pringles",
+                "valor": 20.0
+              },
+              {
+                "nome": "coca cola",
+                "valor": 10.0
+              },
+              {
+                "nome": "coca cola cafe",
+                "valor": 2.5
+              }
+            ]
+          }
+        ],
+        "dataCriacao": "2024-03-12 22:11:29",
+        "dataExplosao": "2024-03-13 22:11:29"
+      },
+      {
+        "id": "329e4269-b2b0-4e9d-8de4-c76d76ed74e3",
+        "etherListRequest": [
+          {
+            "id": "329e4269-b2b0-4e9d-8de4-c76d76ed74e3",
+            "itensListaDTO": [
+              {
+                "nome": "Dub inc",
+                "valor": 25.0
+              },
+              {
+                "nome": "Jason Mraz",
+                "valor": 25.0
+              },
+              {
+                "nome": "Pedra Leticia",
+                "valor": 20.0
+              },
+              {
+                "nome": "RAPadura",
+                "valor": 2.5
+              },
+              {
+                "nome": "Eddie Murphy - Red Light ft. Snoop Dog ",
+                "valor": 2.5
+              }
+            ]
+          }
+        ],
+        "dataCriacao": "2024-03-12 22:46:43",
+        "dataExplosao": "2024-03-13 22:46:43"
+      }
+    ]
+  }
+}

@@ -10,49 +10,55 @@ import com.etherlist.etherlist.adapter.output.rest.dto.EtherListResponseDTO
 import com.etherlist.etherlist.adapter.output.rest.dto.ItensDTO
 
 
+// Converte Categoria para CategoriaDTO
 fun Categoria.toDTO(): CategoriaDTO = CategoriaDTO(
     id = this.id,
     nome = this.nome
 )
 
+// Converte Itens para ItensDTO com categoria
 fun Itens.toDTO(categoriaNome: String): ItensDTO = ItensDTO(
     nome = this.nome,
     valor = this.valor,
     categoria = categoriaNome
 )
 
+// Converte EtherListRequest para EtherListRequestDTO
 fun EtherListRequest.toDTO(): EtherListRequestDTO = EtherListRequestDTO(
     id = this.id,
-    itensDTO = this.itens?.mapNotNull { it?.toDTO("Categoria Padrão") }
+    itensDTO = this.itens?.mapNotNull { it?.toDTO("Categoria Padrão") } // Ajustar conforme necessário
 )
 
-
-
+// Converte EtherListRequestDTO para EtherListRequest
 fun EtherListRequestDTO.toResponse(): EtherListRequest = EtherListRequest(
     id = this.id,
     itens = this.itensDTO?.mapNotNull { it?.toResponse() }
 )
 
+// Converte ItensDTO para Itens
 fun ItensDTO.toResponse(): Itens = Itens(
     nome = this.nome,
     valor = this.valor
 )
 
-fun EtherListResponse.toDTO(): EtherListResponseDTO {
-    return EtherListResponseDTO(
-        id = this.id,
-        etherListRequestDTO = this.etherListRequestDTO?.mapNotNull { it },
-        dataCriacao = this.dataCriacao,
-        dataExplosao = this.dataExplosao
-    )
-}
+// Converte EtherListResponse para EtherListResponseDTO
+fun EtherListResponse.toDTO(): EtherListResponseDTO = EtherListResponseDTO(
+    id = this.id,
+    etherListRequestDTO = this.etherListRequestDTO?.mapNotNull { it?.toDTO() },
+    dataCriacao = this.dataCriacao,
+    dataExplosao = this.dataExplosao
+)
 
+// Converte EtherListResponseDTO para EtherListResponse
+fun EtherListResponseDTO.toResponse(): EtherListResponse = EtherListResponse(
+    id = this.id,
+    etherListRequestDTO = this.etherListRequestDTO?.mapNotNull { it?.toDTO() },
+    dataCriacao = this.dataCriacao,
+    dataExplosao = this.dataExplosao
+)
 
-fun EtherListResponseDTO.toResponse(): EtherListResponse {
-    return EtherListResponse(
-        id = this.id,
-        etherListRequestDTO = this.etherListRequestDTO?.mapNotNull { it },
-        dataCriacao = this.dataCriacao,
-        dataExplosao = this.dataExplosao
-    )
-}
+// Converte EtherListRequestDTO para EtherListRequestDTO
+fun EtherListRequestDTO.toDTO(): EtherListRequestDTO = EtherListRequestDTO(
+    id = this.id,
+    itensDTO = this.itensDTO
+)

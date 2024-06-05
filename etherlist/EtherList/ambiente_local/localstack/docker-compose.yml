@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  localstack:
+  aws:
     image: localstack/localstack
     container_name: localstack
     privileged: true
@@ -11,12 +11,13 @@ services:
     environment:
       - DEBUG=1
       - DATA_DIR=/var/lib/localstack/data
-      - SERVICES=acm,apigateway,cloudformation,cloudwatch,dynamodb,dynamodbstreams,ec2,es,events,firehose,iam,kinesis,kms,lambda,rds,route53,s3,s3api,secretsmanager,ses,sns,sqs,ssm,stepfunctions,sts
-      - LAMBDA_EXECUTOR=docker-reuse
-      - LAMBDA_REMOTE_DOCKER=false
+      - SERVICES=dynamodb
       - LAMBDA_REMOVE_CONTAINERS=true
       - DOCKER_HOST=unix:///var/run/docker.sock
       - HOST_TMP_FOLDER=/tmp/localstack
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - AWS_DEFAULT_REGION=us-east-1
     volumes:
       - ./data:/var/lib/localstack
       - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  aws:
+    image: localstack/localstack
+    container_name: localstack
+    privileged: true
+    ports:
+      - "4566:4566"  # Porta para todos os serviços LocalStack
+      - "4571:4571"  # Porta para a interface web do LocalStack (opcional)
+    environment:
+      - DEBUG=1
+      - DATA_DIR=/var/lib/localstack/data
+      - SERVICES=dynamodb
+      - LAMBDA_REMOVE_CONTAINERS=true
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - HOST_TMP_FOLDER=/tmp/localstack
+      - AWS_ACCESS_KEY_ID=dummy
+      - AWS_SECRET_ACCESS_KEY=dummy
+      - AWS_DEFAULT_REGION=us-east-1
+    volumes:
+      - ./data:/var/lib/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./bin:/docker-entrypoint-initaws.d
